@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Peserta;
+use App\Models\Pendaftar;
+use Illuminate\Support\Facades\Auth;
 
-class PesertaController extends Controller
+class pendaftarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,16 @@ class PesertaController extends Controller
      */
     public function index()
     {
-        // Halaman utama Peserta
-        $datapeserta = Peserta::all();
-        return view('index', ['peserta' => $datapeserta]);
+        // Halaman utama pendaftar
+        $user = Auth::user();
+        if ($user->hasRole('petugas')) {
+            // dapat mengakses data siswa
+            $datapendaftar = Pendaftar::all();
+            return view('index', ['pendaftar' => $datapendaftar]);
+        } else {
+            // dialihkan ke halaman beranda
+            return redirect()->route('beranda');
+        }
     }
 
     /**
@@ -26,8 +34,8 @@ class PesertaController extends Controller
      */
     public function create()
     {
-        // Tambah data peserta
-        return view('tambah_peserta');
+        // Tambah data pendaftar
+        return view('tambah_pendaftar');
     }
 
     /**
@@ -39,13 +47,13 @@ class PesertaController extends Controller
     public function store(Request $request)
     {
         // Proses input data
-        Peserta::create([
+        Pendaftar::create([
             'ktp' => $request->ktp,
             'nama' => $request->nama,
             'tgl_lahir' => $request->tgl_lahir,
             'alamat' => $request->alamat,
         ]);
-        return redirect()->route('peserta.index');
+        return redirect()->route('pendaftar.index');
     }
 
     /**
@@ -56,9 +64,9 @@ class PesertaController extends Controller
      */
     public function show($id)
     {
-        // Detail Peserta
-        $peserta = Peserta::where('id', $id)->first();
-        return view('detail_peserta', ['peserta' => $peserta]);
+        // Detail pendaftar
+        $pendaftar = Pendaftar::where('id', $id)->first();
+        return view('detail_pendaftar', ['pendaftar' => $pendaftar]);
     }
 
     /**
@@ -69,9 +77,9 @@ class PesertaController extends Controller
      */
     public function edit($id)
     {
-        // Edit data peserta
-        $datapeserta = Peserta::find($id);
-        return view('edit_peserta', ['peserta' => $datapeserta]);
+        // Edit data pendaftar
+        $datapendaftar = Pendaftar::find($id);
+        return view('edit_pendaftar', ['pendaftar' => $datapendaftar]);
     }
 
     /**
@@ -83,15 +91,15 @@ class PesertaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // Proses edit data peserta
-        $peserta = Peserta::find($id);
-        $peserta->ktp = $request->ktp;
-        $peserta->nama = $request->nama;
-        $peserta->tgl_lahir = $request->tgl_lahir;
-        $peserta->alamat = $request->alamat;
-        $peserta->save();
+        // Proses edit data pendaftar
+        $pendaftar = Pendaftar::find($id);
+        $pendaftar->ktp = $request->ktp;
+        $pendaftar->nama = $request->nama;
+        $pendaftar->tgl_lahir = $request->tgl_lahir;
+        $pendaftar->alamat = $request->alamat;
+        $pendaftar->save();
 
-        return redirect()->route('peserta.index');
+        return redirect()->route('pendaftar.index');
     }
 
     /**
@@ -103,9 +111,9 @@ class PesertaController extends Controller
     public function destroy($id)
     {
         // proses hapus data USER
-        $peserta = Peserta::find($id);
-        $peserta->delete();
+        $pendaftar = Pendaftar::find($id);
+        $pendaftar->delete();
 
-        return redirect()->route('peserta.index');
+        return redirect()->route('pendaftar.index');
     }
 }

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PesertaController;
+use App\Http\Controllers\PendaftarController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
 
 // Route CRUD
-Route::resource('peserta', PesertaController::class);
+Route::resource('pendaftar', PendaftarController::class)->middleware('role:petugas');

@@ -4,11 +4,11 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h3>Data Peserta Vaksinisasi</h3>
+            <h3>Data Pendaftar Vaksinisasi</h3>
         </div>
         <div class="card-body">
-            <a href="{{route('peserta.create')}}">[+]Tambah Data Peserta</a>
-            <table class="table table-bordered table-striped">
+            <a href="{{route('pendaftar.create')}}">[+]Tambah Data Pendaftar</a>
+            <table class="table table-bordered ">
                 <tr>
                     <th>No. KTP</th>
                     <th>Nama</th>
@@ -16,17 +16,17 @@
                     <th>Alamat</th>
                     <th>Aksi</th>
                 </tr>
-                @foreach($peserta as $pst)
+                @foreach($pendaftar as $pdt)
                 <tr>
-                    <td>{{$pst->ktp}}</td>
-                    <td>{{$pst->nama}}</td>
-                    <td>{{$pst->tgl_lahir}}</td>
-                    <td>{{$pst->alamat}}</td>
+                    <td>{{$pdt->ktp}}</td>
+                    <td>{{$pdt->nama}}</td>
+                    <td>{{$pdt->tgl_lahir}}</td>
+                    <td>{{$pdt->alamat}}</td>
                     <td>
                         <ul class="nav">
-                            <a href="{{route('peserta.show', $pst->id)}}" class="btn btn-primary m-1">Lihat</a>
-                            <a href="{{route('peserta.edit', $pst->id)}}" class="btn btn-warning m-1">Edit</a>
-                            <form action="{{route('peserta.destroy', $pst->id)}}" method="POST">
+                            <a href="{{route('pendaftar.show', $pdt->id)}}" class="btn btn-primary m-1">Lihat</a>
+                            <a href="{{route('pendaftar.edit', $pdt->id)}}" class="btn btn-warning m-1">Edit</a>
+                            <form action="{{route('pendaftar.destroy', $pdt->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger m-1">Hapus</button>

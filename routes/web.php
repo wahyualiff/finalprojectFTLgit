@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PendaftarController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,4 @@ Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
 
 // Route CRUD
 Route::resource('pendaftar', PendaftarController::class)->middleware('role:petugas');
+Route::resource('layanan', LayananController::class)->middleware('role:petugas');

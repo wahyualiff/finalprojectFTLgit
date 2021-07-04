@@ -37,6 +37,9 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="{{route('pendaftar.index')}}">Data Pendaftar <span class="sr-only"></span></a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ route('layanan.index') }}">Data Layanan <span class="sr-only"></span></a>
+                        </li>
                         @endrole
                     </ul>
 

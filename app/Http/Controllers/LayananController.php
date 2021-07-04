@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pendaftar;
+use App\Models\Layanan;
 use Illuminate\Support\Facades\Auth;
 
-class PendaftarController extends Controller
+class LayananController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,12 @@ class PendaftarController extends Controller
      */
     public function index()
     {
-        // Halaman utama pendaftar
+        // Halaman utama layanan
         $user = Auth::user();
         if ($user->hasRole('petugas')) {
-            // dapat mengakses data siswa
-            $datapendaftar = Pendaftar::all();
-            return view('index', ['pendaftar' => $datapendaftar]);
+            // dapat mengakses data layanan
+            $datalayanan = Layanan::all();
+            return view('index', ['layanan' => $datalayanan]);
         } else {
             // dialihkan ke halaman beranda
             return redirect()->route('beranda');
@@ -34,8 +34,8 @@ class PendaftarController extends Controller
      */
     public function create()
     {
-        // Tambah data pendaftar
-        return view('tambah_pendaftar');
+        // Tambah data layanan
+        return view('tambah_layanan');
     }
 
     /**
@@ -47,13 +47,12 @@ class PendaftarController extends Controller
     public function store(Request $request)
     {
         // Proses input data
-        Pendaftar::create([
-            'ktp' => $request->ktp,
-            'nama' => $request->nama,
-            'tgl_lahir' => $request->tgl_lahir,
-            'alamat' => $request->alamat,
+        Layanan::create([
+            'judul_layanan' => $request->judul_layanan,
+            'isi_layanan' => $request->isi_layanan,
+            'gambar' => $request->gambar,
         ]);
-        return redirect()->route('pendaftar.index');
+        return redirect()->route('layanan.index');
     }
 
     /**
@@ -62,11 +61,11 @@ class PendaftarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_layanan)
     {
-        // Detail pendaftar
-        $pendaftar = Pendaftar::where('id', $id)->first();
-        return view('detail_pendaftar', ['pendaftar' => $pendaftar]);
+        // Detail layanan
+        $layanan = Layanan::where('id_layanan', $id_layanan)->first();
+        return view('detail_layanan', ['layanan' => $layanan]);
     }
 
     /**
@@ -75,11 +74,11 @@ class PendaftarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_layanan)
     {
-        // Edit data pendaftar
-        $datapendaftar = Pendaftar::find($id);
-        return view('edit_pendaftar', ['pendaftar' => $datapendaftar]);
+        // Edit data layanan
+        $datalayanan = Layanan::find($id_layanan);
+        return view('edit_layanan', ['layanan' => $datalayanan]);
     }
 
     /**
@@ -89,17 +88,16 @@ class PendaftarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_layanan)
     {
-        // Proses edit data pendaftar
-        $pendaftar = Pendaftar::find($id);
-        $pendaftar->ktp = $request->ktp;
-        $pendaftar->nama = $request->nama;
-        $pendaftar->tgl_lahir = $request->tgl_lahir;
-        $pendaftar->alamat = $request->alamat;
-        $pendaftar->save();
+        // Proses edit data layanan
+        $layanan = Layanan::find($id_layanan);
+        $layanan->judul_layanan = $request->judul_layanan;
+        $layanan->isi_layanan = $request->isi_layanan;
+        $layanan->gambar = $request->gambar;
+        $layanan->save();
 
-        return redirect()->route('pendaftar.index');
+        return redirect()->route('layanan.index');
     }
 
     /**
@@ -108,12 +106,12 @@ class PendaftarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_layanan)
     {
         // proses hapus data USER
-        $pendaftar = Pendaftar::find($id);
-        $pendaftar->delete();
+        $layanan = Layanan::find($id_layanan);
+        $layanan->delete();
 
-        return redirect()->route('pendaftar.index');
+        return redirect()->route('layanan.index');
     }
 }

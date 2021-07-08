@@ -20,7 +20,7 @@ class LayananController extends Controller
         if ($user->hasRole('petugas')) {
             // dapat mengakses data layanan
             $datalayanan = Layanan::all();
-            return view('index', ['layanan' => $datalayanan]);
+            return view('layanan', ['layanan' => $datalayanan]);
         } else {
             // dialihkan ke halaman beranda
             return redirect()->route('beranda');
@@ -61,10 +61,10 @@ class LayananController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id_layanan)
+    public function show($id)
     {
         // Detail layanan
-        $layanan = Layanan::where('id_layanan', $id_layanan)->first();
+        $layanan = Layanan::where('id', $id)->first();
         return view('detail_layanan', ['layanan' => $layanan]);
     }
 
@@ -74,10 +74,10 @@ class LayananController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_layanan)
+    public function edit($id)
     {
         // Edit data layanan
-        $datalayanan = Layanan::find($id_layanan);
+        $datalayanan = Layanan::find($id);
         return view('edit_layanan', ['layanan' => $datalayanan]);
     }
 
@@ -88,10 +88,10 @@ class LayananController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_layanan)
+    public function update(Request $request, $id)
     {
         // Proses edit data layanan
-        $layanan = Layanan::find($id_layanan);
+        $layanan = Layanan::find($id);
         $layanan->judul_layanan = $request->judul_layanan;
         $layanan->isi_layanan = $request->isi_layanan;
         $layanan->gambar = $request->gambar;
@@ -106,10 +106,10 @@ class LayananController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id_layanan)
+    public function destroy($id)
     {
         // proses hapus data USER
-        $layanan = Layanan::find($id_layanan);
+        $layanan = Layanan::find($id);
         $layanan->delete();
 
         return redirect()->route('layanan.index');

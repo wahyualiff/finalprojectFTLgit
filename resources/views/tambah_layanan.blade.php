@@ -11,8 +11,8 @@
                 @csrf
                 <ul class="list-group">
                     Judul Layanan <input type="text" name="judul_layanan" required>
-                    Isi Layanan <input type="text" name="isi_layanan" required>
-                    Gambar <input type="text" name="gambar" required>
+                    Isi Layanan <textarea type="isi_layanan" name="isi_layanan" required></textarea>
+                    Gambar <input type="file" name="gambar" required>
                 </ul>
                 <hr>
                 <a href="{{route('layanan.index')}}" class="btn btn-primary">Kembali</a>

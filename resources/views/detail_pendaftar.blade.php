@@ -7,23 +7,24 @@
             <h3>Detail Pendaftar Vaksinisasi Puskesmas Suka Suka</h3>
         </div>
         <div class="card-body">
-            <div class="row ml-2">
-                <h4 class="col-4">No. KTP</h4>
-                <h4>: {{$pendaftar->ktp}} </h4>
+            <div class="row">
+                <h4 class="col-5">No. KTP</h4>
+                <h4 class="col">: {{$pendaftar->ktp}} </h4>
             </div>
-            <div class="row ml-2">
-                <h4 class="col-4">Nama</h4>
-                <h4>: {{$pendaftar->nama}} </h4>
+            <div class="row">
+                <h4 class="col-5">Nama</h4>
+                <h4 class="col">: {{$pendaftar->nama}} </h4>
             </div>
-            <div class="row ml-2">
-                <h4 class="col-4">Tanggal Lahir</h4>
-                <h4>: {{$pendaftar->tgl_lahir}} </h4>
+            <div class="row">
+                <h4 class="col-5">Tanggal Lahir</h4>
+                <h4 class="col">: {{$pendaftar->tgl_lahir}} </h4>
             </div>
-            <div class="row ml-2">
-                <h4 class="col-4">Alamat</h4>
-                <h4>: {{$pendaftar->alamat}} </h4>
+            <div class="row">
+                <h4 class="col-5">Alamat</h4>
+                <h4 class="col">: {{$pendaftar->alamat}} </h4>
             </div>
-            <a href="{{route('pendaftar.index')}}" class="btn btn-primary">Kembali</a>
+            <hr>
+            <a href="{{route('pendaftar.index')}}" class="btn btn-primary float-right">Kembali</a>
         </div>
     </div>
 </div>

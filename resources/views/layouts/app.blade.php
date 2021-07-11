@@ -46,10 +46,13 @@
                     <ul class="navbar-nav mr-auto">
                         @role('petugas')
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{route('pendaftar.index')}}">Data Pendaftar <span class="sr-only"></span></a>
+                            <a class="nav-link" href="{{route('pendaftar.index')}}">Pendaftar <span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{route('layanan.index')}}">Data Layanan <span class="sr-only"></span></a>
+                            <a class="nav-link" href="{{route('layanan.index')}}">Layanan <span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Galeri <span class="sr-only"></span></a>
                         </li>
                         @endrole
                         @role('admin')
@@ -58,6 +61,14 @@
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="{{route('layanan.index')}}">Data Layanan <span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Galeri <span class="sr-only"></span></a>
+                        </li>
+                        @endrole
+                        @role('pendaftar')
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Info Kegiatan <span class="sr-only"></span></a>
                         </li>
                         @endrole
                     </ul>

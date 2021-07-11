@@ -11,9 +11,9 @@
                 @csrf
                 @method('PUT')
                 <ul class="list-group">
-                    Judul Layanan <input type="text" name="judul_layanan" required value="{{$layanan->judul_layanan}}">
-                    Isi Layanan <input type="text" name="isi_layanan" required value="{{$layanan->isi_layanan}}">
                     Gambar <input type="file" name="gambar" required value="{{$layanan->gambar}}" >
+                    Judul Layanan <input type="text" name="judul_layanan" required value="{{$layanan->judul_layanan}}">
+                    Isi Layanan <textarea name="isi_layanan" required value="{{$layanan->isi_layanan}}"></textarea>
                 </ul>
                 <hr>
                 <a href="{{route('layanan.index')}}" class="btn btn-primary">Kembali</a>

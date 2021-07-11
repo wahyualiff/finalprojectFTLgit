@@ -17,7 +17,7 @@ class PendaftarController extends Controller
     {
         // Halaman utama pendaftar
         $user = Auth::user();
-        if ($user->hasRole('petugas')) {
+        if ($user->hasRole('petugas') or $user->hasRole('admin')) {
             // dapat mengakses data siswa
             $datapendaftar = Pendaftar::all();
             return view('index', ['pendaftar' => $datapendaftar]);

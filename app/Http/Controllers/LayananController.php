@@ -23,7 +23,9 @@ class LayananController extends Controller
             return view('layanan', ['layanan' => $datalayanan]);
         } else {
             // dialihkan ke halaman beranda
-            return redirect()->route('beranda');
+            $datalayanan = Layanan::all();
+            dd($datalayanan);
+            return view('beranda', ['layanan' => $datalayanan]);
         }
     }
 

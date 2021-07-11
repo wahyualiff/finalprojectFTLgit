@@ -10,9 +10,9 @@
             <form action="{{route('layanan.index')}}" method="POST">
                 @csrf
                 <ul class="list-group">
+                    Gambar <input type="file" name="gambar" required>
                     Judul Layanan <input type="text" name="judul_layanan" required>
                     Isi Layanan <textarea type="isi_layanan" name="isi_layanan" required></textarea>
-                    Gambar <input type="file" name="gambar" required>
                 </ul>
                 <hr>
                 <a href="{{route('layanan.index')}}" class="btn btn-primary">Kembali</a>

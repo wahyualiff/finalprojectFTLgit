@@ -20,12 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
 
 // Route CRUD
 Route::resource('pendaftar', PendaftarController::class)->middleware('role:admin|petugas');
 Route::resource('layanan', LayananController::class)->middleware('role:petugas');
+Route::resource('galeri', GaleriController::class);

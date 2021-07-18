@@ -17,7 +17,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.scss') }}" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <style>
@@ -35,7 +37,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/beranda') }}">
-                   PUSKAS
+                PUSKAS
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -52,7 +54,7 @@
                             <a class="nav-link" href="{{route('layanan.index')}}">Layanan <span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Galeri <span class="sr-only"></span></a>
+                            <a class="nav-link" href="{{route('galeri.index')}}">Galeri <span class="sr-only"></span></a>
                         </li>
                         @endrole
                         @role('admin')
@@ -63,7 +65,7 @@
                             <a class="nav-link" href="{{route('layanan.index')}}">Data Layanan <span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Galeri <span class="sr-only"></span></a>
+                            <a class="nav-link" href="{{route('galeri.index')}}">Galeri <span class="sr-only"></span></a>
                         </li>
                         @endrole
                         @role('pendaftar')

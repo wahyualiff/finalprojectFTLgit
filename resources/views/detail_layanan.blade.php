@@ -8,16 +8,13 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <h4 class="col-5">Gambar</h4>
-                <h4 class="col">: <img src="{{ Storage::url('public/').$layanan->gambar }}" style="width: 150px" alt=""></h4>
-            </div>
-            <div class="row ">
-                <h4 class="col-5">Judul Layanan</h4>
-                <h4 class="col">: {{$layanan->judul_layanan}} </h4>
+                <h4 class="col text-center"><img src="{{ Storage::url('public/').$layanan->gambar }}" style="width: 300px" alt=""></h4>
             </div>
             <div class="row">
-                <h4 class="col-5">Isi Layanan</h4>
-                <h4 class="col">: {{$layanan->isi_layanan}} </h4>
+                <h4 class="col"><center>{{$layanan->judul_layanan}}</center> </h4>
+            </div>
+            <div class="row">
+                <p class="col" style="text-align: justify;">{{$layanan->isi_layanan}} </p>
             </div>
             <hr>
             <a href="{{route('layanan.index')}}" class="btn btn-primary float-right" >Kembali</a>

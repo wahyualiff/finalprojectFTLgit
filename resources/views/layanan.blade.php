@@ -10,10 +10,10 @@
             <a href="{{route('layanan.create')}}">[+]Tambah Layanan</a>
             <table class="table table-bordered ">
                 <tr>
-                    <th>Gambar</th>
-                    <th>Judul Layanan</th>
-                    <th>Isi Layanan</th>
-                    <th>Aksi</th>
+                    <th style="text-align: center;">Gambar</th>
+                    <th style="text-align: center;">Judul Layanan</th>
+                    <th style="text-align: center;">Isi Layanan</th>
+                    <th style="text-align: center;">Aksi</th>
                 </tr>
                 @foreach($layanan as $lyn)
                 <tr>

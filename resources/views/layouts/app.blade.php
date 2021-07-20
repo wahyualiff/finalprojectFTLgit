@@ -67,10 +67,13 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="{{route('galeri.index')}}">Galeri <span class="sr-only"></span></a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{route('konfigurasi.index')}}">Konfigurasi Website <span class="sr-only"></span></a>
+                        </li>
                         @endrole
                         @role('pendaftar')
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Info Kegiatan <span class="sr-only"></span></a>
+                            <a class="nav-link" href="info-kegiatan">Info Kegiatan <span class="sr-only"></span></a>
                         </li>
                         @endrole
                     </ul>
@@ -121,4 +124,16 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        <b>fasttracklaravel</b> 1.0 &nbsp;
+    </div>
+    <strong>&nbsp; Copyright &copy;
+        <script>
+            document.write(new Date().getFullYear())
+        </script>
+        <a href="https://github.com/wahyualiff">Wahyu Alif</a>.</strong> All rights
+    reserved.
+</footer>
+<br>
 </html>

@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Galeri;
 use Illuminate\Http\Request;
 use App\Models\Layanan;
+use App\Models\Konfigurasi;
 
 class HomeController extends Controller
 {
     public function home()
     {
         $datalayanan = Layanan::all();
-        return view('beranda', ['layanan' => $datalayanan]);;
+        $datakonfigurasi = Konfigurasi::all();
+        return view('beranda', [
+            'layanan' => $datalayanan,
+            'konfigurasi' => $datakonfigurasi
+        ]);
     }
     /**
      * Create a new controller instance.
@@ -30,5 +36,11 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function galeri()
+    {
+        $datagaleri = Galeri::all();
+        return view('info-kegiatan', ['galeri' => $datagaleri]);
     }
 }

@@ -11,8 +11,8 @@
                 @csrf
                 <ul class="list-group">
                     Gambar <input type="file" name="gambar" required>
-                    Deskripsi <input type="text" name="deskripsi" required>
-                    Posisi <textarea type="isi_galeri" name="posisi" required></textarea>
+                    Judul <input type="text" name="title" required>
+                    Deskripsi <textarea name="deskripsi" required></textarea>
                 </ul>
                 <hr>
                 <a href="{{route('galeri.index')}}" class="btn btn-primary">Kembali</a>

@@ -33,41 +33,46 @@
                         <img class="rounded-circle" src="{{ Storage::url('public/').$lyn->gambar }}" alt="" style="height: 250px; object-fit:contain; width:100%" >
                         <h3><center>{{$lyn->judul_layanan}}</h3>
                         <p>{{Str::limit($lyn->isi_layanan, 70) }}</p>
-                        <a href="{{route('layanan.show', $lyn->id)}}" class="btn btn-primary m-1">Lihat</a>
+                        <a href="{{route('lihat.show', $lyn->id)}}" class="btn btn-primary m-1">Lihat</a>
                     </div>
                     @endforeach
                 </div>
             </div>
         <br><br>
-        <div class="row">
-            <h1><center>Alamat Kami</center></h1>
-            <div class="col float-left">
-                <br>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.620026211232!2d106.89569561436262!3d-6.442812264793015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69eac62795e887%3A0x18619170c520109d!2sPuskesmas%20Bojong%20Nangka!5e0!3m2!1sid!2sid!4v1625472824314!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-                <div class="col">
-                    <br><br>
-                    <p><i class="fa fa-instagram"></i> Instagram : @puskas</p> 
-                    <p><i class="fa fa-facebook"></i> Facebook : Puskesmas Desa Suka Suka</p>
-                    <p><i class="fa fa-whatsapp"></i> Telp : 087778397596</p> 
+        <div class="album py-5 bg-light">
+            <div class="container">
+                @foreach($konfigurasi as $kon)
+                <div class="row judul">
+                    <div class="col-md-12 text-center">
+                        <h1>Alamat Kami</h1>
+                    </div>
                 </div>
+                <div class="row artikel">
+                    
+                    <div class="col-md-12">
+                        <p style="text-align: center;">
+                            {{--  <!-- Map dari Google Map -->  --}}
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.8224625870707!2d106.93581061436238!3d-6.416852964539342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6994e3db9c3631%3A0xa8eba51fd54f10e3!2sPuskesmas%20Gunung%20Putri!5e0!3m2!1sid!2sid!4v1626767090926!5m2!1sid!2sid" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </p>
+                    </div>
+                </div>
+        
+                <div class="row artikel">
+                    <div class="col-md-12">
+                        <p>
+                            <h4> {{$kon->namaweb}}</h4>
+                            <h6>Anda dapat menghubungi kami melalui alamat dibawah ini:</h6>
+                            <br><i class="fa fa-map-marker"></i> {{$kon->alamat}}
+                            <br><i class="fa fa-phone"></i> {{$kon->telepon}}
+                            <br><i class="fa fa-envelope"></i> {{$kon->email}}
+                            <br><i class="fa fa-instagram"></i> {{$kon->instagram}}
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+                @endforeach
             </div>
+        </div>
     </main>
 </body>
-<footer class="footer bg-dark text-white" style="height: 250px; padding: 50px;">
-    <div class="row">
-        <div class="col"><br>Made by Muhamad Wahyu Alif &middot;
-            <a href="#">Privacy</a> &middot;
-            <a href="#">Terms</a>
-        </div>
-        <br>
-        <div class="col" align="center">
-            <h4>Kontak saya</h4>
-            <br>
-                <p><i class="fa fa-instagram"></i> Instagram : @wahyualif__</p> 
-                <p><i class="fa fa-facebook"></i> Facebook : Muhamad Wahyu Alif</p>
-                <p><i class="fa fa-whatsapp"></i> 087778397596</p> 
-        </div>
-    </div>
-</footer>
 @endsection

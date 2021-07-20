@@ -21,8 +21,11 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/beranda', [HomeController::class, 'home'])->name('beranda');
+Route::get('/info-kegiatan', [HomeController::class, 'galeri'])->name('info-kegiatan');
 
 // Route CRUD
-Route::resource('pendaftar', PendaftarController::class)->middleware('role:admin|petugas');
-Route::resource('layanan', LayananController::class)->middleware('role:petugas');
-Route::resource('galeri', GaleriController::class);
+Route::resource('pendaftar', PendaftarController::class)->middleware("role:admin|petugas");
+Route::resource('layanan', LayananController::class)->middleware("role:admin|petugas");
+Route::resource('galeri', GaleriController::class)->middleware("role:admin|petugas");
+Route::resource('konfigurasi', KonfigurasiController::class)->middleware('role:admin');
+Route::resource('lihat', LihatController::class);

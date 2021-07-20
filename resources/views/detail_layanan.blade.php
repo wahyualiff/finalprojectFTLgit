@@ -17,7 +17,15 @@
                 <p class="col" style="text-align: justify;">{{$layanan->isi_layanan}} </p>
             </div>
             <hr>
+            @role('admin')
             <a href="{{route('layanan.index')}}" class="btn btn-primary float-right" >Kembali</a>
+            @endrole
+            @role('petugas')
+            <a href="{{route('layanan.index')}}" class="btn btn-primary float-right" >Kembali</a>
+            @endrole
+            @role('pendaftar')
+            <a href="{{route('beranda')}}" class="btn btn-primary float-right" >Kembali</a>
+            @endrole
         </div>
     </div>
 </div>

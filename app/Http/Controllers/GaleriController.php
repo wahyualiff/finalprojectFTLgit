@@ -17,14 +17,13 @@ class GaleriController extends Controller
     {
         // Halaman utama galeri
         $user = Auth::user();
-        if ($user->hasRole('petugas')) {
+        if ($user->hasRole('petugas') or $user->hasRole('admin')) {
             // dapat mengakses data galeri
             $datagaleri = Galeri::all();
             return view('galeri', ['galeri' => $datagaleri]);
         } else {
             // dialihkan ke halaman beranda
             $datagaleri = Galeri::all();
-            dd($datagaleri);
             return view('beranda', ['galeri' => $datagaleri]);
         }
     }
@@ -51,8 +50,8 @@ class GaleriController extends Controller
         // Proses input data
         Galeri::create([
             'gambar' => $request->gambar,
+            'title' => $request->title,
             'deskripsi' => $request->deskripsi,
-            'posisi' => $request->posisi,
         ]);
         return redirect()->route('galeri.index');
     }
@@ -95,8 +94,8 @@ class GaleriController extends Controller
         // Proses edit data galeri
         $galeri = Galeri::find($id);
         $galeri->gambar = $request->gambar;
+        $galeri->title = $request->title;
         $galeri->deskripsi = $request->deskripsi;
-        $galeri->posisi = $request->posisi;
         $galeri->save();
 
         return redirect()->route('galeri.index');

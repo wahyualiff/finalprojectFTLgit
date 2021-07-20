@@ -12,8 +12,9 @@
                 @method('PUT')
                 <ul class="list-group">
                     Gambar <input type="file" name="gambar" required value="{{$galeri->gambar}}" >
-                    Deskripsi <input type="text" name="deskripsi" required value="{{$galeri->deskripsi}}">
-                    Posisi <input type="text" name="posisi" required value="{{$galeri->posisi}}">
+                    Judul <input type="text" name="title" required value="{{$galeri->title}}">
+                    Deskripsi <textarea name="deskripsi" required value="{{$galeri->deskripsi}}"></textarea>
+                    {{--  Posisi <input type="text" name="posisi" required value="{{$galeri->posisi}}">  --}}
                 </ul>
                 <hr>
                 <a href="{{route('galeri.index')}}" class="btn btn-primary">Kembali</a>

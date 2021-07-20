@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Galeri extends Model
+class Lihat extends Model
 {
     use HasFactory;
-    protected $table = 'galeri';
-    protected $fillable = ['gambar', 'title', 'deskripsi'];
+    protected $table = 'layanan';
+    protected $fillable = ['gambar', 'judul_layanan', 'isi_layanan'];
 }

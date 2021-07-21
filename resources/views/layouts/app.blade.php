@@ -21,7 +21,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.scss') }}" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
     <style>
         main {
             width: 100%;
@@ -33,6 +32,15 @@
     </style>
 </head>
 <body>
+    {{--  <script src="{{ asset('vendor/ckeditor/ckeditor/ckeditor.js') }}">
+        $(function() {
+            $('isi_layanan').ckeditor({
+                toolbar: 'Full',
+                enterMode : CKEDITOR.ENTER_BR,
+                shiftEnterMode: CKEDITOR.ENTER_P
+            });
+        });
+        </script>  --}}
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -122,7 +130,6 @@
             @yield('content')
         </main>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -131,7 +138,7 @@
     <strong>&nbsp; Copyright &copy;
         <script>
             document.write(new Date().getFullYear())
-        </script>
+        </scr>
         <a href="https://github.com/wahyualiff">Wahyu Alif</a>.</strong> All rights
     reserved.
 </footer>

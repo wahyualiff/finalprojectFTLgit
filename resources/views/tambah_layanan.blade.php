@@ -17,7 +17,10 @@
                 <hr>
                 <a href="{{route('layanan.index')}}" class="btn btn-primary">Kembali</a>
                 <input type="submit" value="Simpan" class="btn btn-success">
-            </form>
+            </form>           
+            {{--  <script>
+                CKEDITOR.replace( 'isi_layanan' );
+            </script>  --}}
         </div>
     </div>
 </div>

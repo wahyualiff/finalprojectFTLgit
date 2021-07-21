@@ -6,6 +6,7 @@ use App\Models\Galeri;
 use Illuminate\Http\Request;
 use App\Models\Layanan;
 use App\Models\Konfigurasi;
+use App\Models\Pendaftar;
 
 class HomeController extends Controller
 {
@@ -42,5 +43,11 @@ class HomeController extends Controller
     {
         $datagaleri = Galeri::all();
         return view('info-kegiatan', ['galeri' => $datagaleri]);
+    }
+
+    public function pendaftar()
+    {
+        $datapendaftar = Pendaftar::all();
+        return view('profil', ['pendaftar' => $datapendaftar]);
     }
 }

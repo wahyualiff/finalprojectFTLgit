@@ -28,4 +28,6 @@ Route::resource('pendaftar', PendaftarController::class)->middleware("role:admin
 Route::resource('layanan', LayananController::class)->middleware("role:admin|petugas");
 Route::resource('galeri', GaleriController::class)->middleware("role:admin|petugas");
 Route::resource('konfigurasi', KonfigurasiController::class)->middleware('role:admin');
+Route::resource('users', UserController::class)->middleware('role:admin');
 Route::resource('lihat', LihatController::class);
+Route::resource('profil', ProfilController::class)->middleware('role:pendaftar');

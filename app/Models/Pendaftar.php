@@ -9,5 +9,5 @@ class Pendaftar extends Model
 {
     use HasFactory;
     protected $table = 'pendaftar';
-    protected $fillable = ['ktp', 'nama', 'tgl_lahir', 'alamat'];
+    protected $fillable = ['email', 'nama', 'tgl_lahir', 'alamat'];
 }

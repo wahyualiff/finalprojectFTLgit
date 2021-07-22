@@ -48,8 +48,11 @@
                     <ul class="navbar-nav mr-auto">
                         @role('petugas')
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{route('pendaftar.index')}}">Pendaftar <span class="sr-only"></span></a>
+                            <a class="nav-link" href="{{route('puskesmas.index')}}">Data Puskesmas <span class="sr-only"></span></a>
                         </li>
+                        {{--  <li class="nav-item active">
+                            <a class="nav-link" href="{{route('pendaftar.index')}}">Pendaftar <span class="sr-only"></span></a>
+                        </li>  --}}
                         <li class="nav-item active">
                             <a class="nav-link" href="{{route('layanan.index')}}">Layanan <span class="sr-only"></span></a>
                         </li>
@@ -62,8 +65,11 @@
                             <a class="nav-link" href="{{route('users.index')}}">Data User <span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{route('pendaftar.index')}}">Data Pendaftar <span class="sr-only"></span></a>
+                            <a class="nav-link" href="{{route('puskesmas.index')}}">Data Puskesmas <span class="sr-only"></span></a>
                         </li>
+                        {{--  <li class="nav-item active">
+                            <a class="nav-link" href="{{route('pendaftar.index')}}">Data Pendaftar <span class="sr-only"></span></a>
+                        </li>  --}}
                         <li class="nav-item active">
                             <a class="nav-link" href="{{route('layanan.index')}}">Data Layanan <span class="sr-only"></span></a>
                         </li>
@@ -75,6 +81,9 @@
                         </li>
                         @endrole
                         @role('pendaftar')
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{route('puskesmas.index')}}">Data Puskesmas <span class="sr-only"></span></a>
+                        </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="info-kegiatan">Info Kegiatan <span class="sr-only"></span></a>
                         </li>
@@ -100,7 +109,6 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
-                                    {{ Auth::user()->role }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

@@ -16,7 +16,6 @@
                     <div class="form-group">
                         <label>Hak Akses</label>
                         <select name="role" class="form-control">
-                            <option value="petugas">Petugas</option>
                             <option value="pendaftar">Pendaftar</option>
                         </select>
                     </div>

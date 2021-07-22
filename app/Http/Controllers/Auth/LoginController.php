@@ -42,11 +42,11 @@ class LoginController extends Controller
     public function authenticated(Request $request, $user)
     {
         if ($user->hasRole('admin')) {
-            return redirect()->route('pendaftar.index');
+            return redirect()->route('users.index');
         } else if ($user->hasRole('pendaftar')) {
             return redirect()->route('beranda');
         } else if ($user->hasRole('petugas')) {
-            return redirect()->route('pendaftar.index');
+            return redirect()->route('puskesmas.index');
         }
     }
 }

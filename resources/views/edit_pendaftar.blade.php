@@ -11,7 +11,7 @@
                 @csrf
                 @method('PUT')
                 <ul class="list-group">
-                    No. KTP <input type="number" name="ktp" required value="{{$pendaftar->ktp}}">
+                    Email <input type="text" name="email" required value="{{$pendaftar->email}}">
                     Nama <input type="text" name="nama" required value="{{$pendaftar->nama}}">
                     Tanggal Lahir <input type="date" name="tgl_lahir" required value="{{$pendaftar->tgl_lahir}}" >
                     Alamat <input type="text" name="alamat" required value="{{$pendaftar->alamat}}" >

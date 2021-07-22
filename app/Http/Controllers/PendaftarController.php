@@ -48,7 +48,7 @@ class PendaftarController extends Controller
     {
         // Proses input data
         Pendaftar::create([
-            'ktp' => $request->ktp,
+            'email' => $request->email,
             'nama' => $request->nama,
             'tgl_lahir' => $request->tgl_lahir,
             'alamat' => $request->alamat,
@@ -93,7 +93,7 @@ class PendaftarController extends Controller
     {
         // Proses edit data pendaftar
         $pendaftar = Pendaftar::find($id);
-        $pendaftar->ktp = $request->ktp;
+        $pendaftar->email = $request->email;
         $pendaftar->nama = $request->nama;
         $pendaftar->tgl_lahir = $request->tgl_lahir;
         $pendaftar->alamat = $request->alamat;

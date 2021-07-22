@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePesertaTable extends Migration
+class CreatePuskesmasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreatePesertaTable extends Migration
      */
     public function up()
     {
-        Schema::create('peserta', function (Blueprint $table) {
+        Schema::create('puskesmas', function (Blueprint $table) {
             $table->id();
-            $table->integer('ktp');
+            $table->string('image');
             $table->string('nama');
-            $table->date('tgl_lahir');
-            $table->string('alamat');
+            $table->string('email');
+            $table->string('instagram');
+            $table->string('telepon');
+            $table->text('alamat');
+            $table->text('map');
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ class CreatePesertaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('peserta');
+        Schema::dropIfExists('puskesmas');
     }
 }

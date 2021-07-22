@@ -10,7 +10,7 @@
             <form action="{{route('pendaftar.index')}}" method="POST">
                 @csrf
                 <ul class="list-group">
-                    No. KTP <input type="number" name="ktp" required>
+                    Email <input type="text" name="email" required>
                     Nama <input type="text" name="nama" required>
                     Tanggal Lahir <input type="date" name="tgl_lahir" required>
                     Alamat <input type="text" name="alamat" required>

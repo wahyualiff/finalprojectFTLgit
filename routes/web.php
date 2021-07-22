@@ -29,5 +29,7 @@ Route::resource('layanan', LayananController::class)->middleware("role:admin|pet
 Route::resource('galeri', GaleriController::class)->middleware("role:admin|petugas");
 Route::resource('konfigurasi', KonfigurasiController::class)->middleware('role:admin');
 Route::resource('users', UserController::class)->middleware('role:admin');
+Route::resource('userpuskesmas', UpuskesmasController::class);
 Route::resource('lihat', LihatController::class);
 Route::resource('profil', ProfilController::class)->middleware('role:pendaftar');
+Route::resource('puskesmas', PuskesmasController::class)->middleware("role:admin|petugas|pendaftar");

@@ -10,7 +10,7 @@
             <a href="{{route('pendaftar.create')}}">[+]Tambah Data Pendaftar</a>
             <table class="table table-bordered ">
                 <tr>
-                    <th>No. KTP</th>
+                    <th>Email</th>
                     <th>Nama</th>
                     <th>Tanggal Lahir</th>
                     <th>Alamat</th>
@@ -18,7 +18,7 @@
                 </tr>
                 @foreach($pendaftar as $pdt)
                 <tr>
-                    <td>{{$pdt->ktp}}</td>
+                    <td>{{$pdt->email}}</td>
                     <td>{{$pdt->nama}}</td>
                     <td>{{$pdt->tgl_lahir}}</td>
                     <td>{{$pdt->alamat}}</td>
